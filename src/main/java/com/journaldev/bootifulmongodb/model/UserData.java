@@ -3,26 +3,40 @@ package com.journaldev.bootifulmongodb.model;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class UserData {
 
 	@Id
-	private String userId;
-	 private String type;
-	 Attributes attributes;
-
+	private String id;
+	
+	@Indexed
+	private UUID userId;	
+	
+	private String type;
+	 
+	Attributes attributes;
 
 	 // Getter Methods 
 
-	 public String getUserId() {
+	 public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public UUID getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(UUID userId) {
 		this.userId = userId;
 	}
 

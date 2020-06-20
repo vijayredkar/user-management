@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Attributes {
 
 	@Id
-	private String attributesId;
+	 private String attributesId;
 	 private String email;
 	 private String mobilePhone;
 	 private String identityNumber;
